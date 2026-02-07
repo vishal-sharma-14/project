@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Rasmalai ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+overflow:hidden;
+background:#ff7eb3;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:100%;
+background:linear-gradient(45deg,#ff758c,#ff7eb3);
+color:white;
+text-align:center;
+padding:20px;
+box-sizing:border-box;
+transition:0.6s;
+overflow:auto;
+}
+
+.active{ left:0; }
+
+h2{ margin-top:40px; }
+
+img{
+width:90%;
+max-width:300px;
+border-radius:15px;
+margin:15px 0;
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+button{
+padding:14px 22px;
+font-size:18px;
+border:none;
+border-radius:12px;
+background:white;
+color:#ff4b6e;
+margin:10px;
+cursor:pointer;
+}
+
+#no{
+background:#ff4b6e;
+color:white;
+position:absolute;
+}
+
+.fall{
+position:fixed;
+top:-20px;
+font-size:22px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{ transform:translateY(110vh); opacity:0; }
+}
+
+.glow{
+animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+from{background:#ff7eb3;}
+to{background:#ff4b6e;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+<h2>I have something for you 💝</h2>
+<img src="photo1.jpg">
+<p>
+From the moment you came into my life… everything feels softer, happier,
+and more meaningful. Talking to you is my favorite habit.
+Your smile is my peace, and your presence is my comfort.
+You don’t just make my days better… you make my whole world brighter.
+</p>
+<button onclick="next(2)">Next ❤️</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+<h2>My Favorite Person 🥰</h2>
+<img src="photo2.jpg">
+<p>
+Every laugh we share, every silly moment, every deep talk…
+I carry them all in my heart. Being with you feels natural,
+like this is exactly where I’m meant to be.
+You are my happiness in human form.
+</p>
+<button onclick="next(3)">Next ❤️</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+<h2>Forever Feels Right 💞</h2>
+<img src="photo3.jpg">
+<p>
+With you… love feels easy, warm, and magical.
+I don’t want temporary moments —
+I want memories, adventures, and a lifetime beside you.
+You are not just special… you are my forever feeling.
+</p>
+<button onclick="next(4)">One last thing… ❤️</button>
+</div>
+
+<!-- FINAL PAGE -->
+<div class="page" id="p4">
+<h2>
+Will uu marry me my rasmalaiiiiiiiiii 💍❤️  
+my forever loveee… will u wana become mine forever?
+</h2>
+
+<button onclick="celebrate()">YES ❤️</button>
+<button id="no" onmouseover="run()" ontouchstart="run()">NO 😜</button>
+
+</div>
+
+<script>
+
+function next(n){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById("p"+n).classList.add("active");
+}
+
+function run(){
+let b=document.getElementById("no");
+b.style.top=Math.random()*80+"vh";
+b.style.left=Math.random()*80+"vw";
+}
+
+function celebrate(){
+
+document.body.classList.add("glow");
+
+for(let i=0;i<250;i++){
+let e=document.createElement("div");
+
+e.innerHTML=Math.random()>0.5?"🌹":"💖";
+e.className="fall";
+
+e.style.left=Math.random()*100+"vw";
+e.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(e);
+}
+
+alert("SHE SAID YESSS!!! ❤️🌹🎉");
+
+}
+
+</script>
+
+</body>
+</html>
